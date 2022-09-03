@@ -71,7 +71,7 @@ Shader "Unlit/WaveShader"
 				//v.vertex += float4(0.0f, sin(v.vertex.x + _Time.y), 0.0f, 0.0f);
 				
 				// Finally apply the projection matrix to complete the transformation into screen space
-				o.vertex = mul(UNITY_MATRIX_P, v.vertex);
+				//o.vertex = mul(UNITY_MATRIX_P, v.vertex);
 
 				// Task 9 (challenge)
 				// Check out the CustomMVP.cs script as well...
