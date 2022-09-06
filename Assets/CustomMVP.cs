@@ -21,11 +21,14 @@ public class CustomMVP : MonoBehaviour
         // do a bit of the heavy lifting (e.g. converting quaternions to matrix
         // rotations using Matrix4x4.TRS).
 
-        // Extract M out of this object's transform, fairly straightforward
+        // Extract M out of this object's transform, fairly straightforward.
+        // Note "lossyScale" is the closest thing we have to a "world space"
+        // scale (that takes parent transforms into account). In very select
+        // cases this may not reflect the exact transform if there is a parent.
         var M = Matrix4x4.TRS(
             this.transform.position, 
             this.transform.rotation, 
-            this.transform.localScale);
+            this.transform.lossyScale);
 
         // V is a bit trickier to get. Turns out Unity uses a right-handed
         // coordinate system for view coordinates internally (OpenGL style), so
