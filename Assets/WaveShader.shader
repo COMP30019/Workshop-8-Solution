@@ -63,12 +63,12 @@ Shader "Unlit/WaveShader"
 				// so we have to do this ourselves.
 				//o.vertex = mul(mul(UNITY_MATRIX_P, unity_ObjectToWorld), v.vertex); 
 				
-				// Task 8 - Need to apply wave transformation between M and VP!
+				// Task 8 - Need to apply wave transformation between MV and P!
 				// Apply the model and view matrix to the vertex (but not the projection matrix yet)
 				//v.vertex = mul(UNITY_MATRIX_MV, v.vertex);
 
 				// v.vertex is now in view space. This is the point where we want to apply the displacement.
-				//v.vertex += float4(0.0f, sin(v.vertex.x + _Time.y), 0.0f, 0.0f);
+				//v.vertex += float4(0.0f, sin(v.vertex.x), 0.0f, 0.0f);
 				
 				// Finally apply the projection matrix to complete the transformation into screen space
 				//o.vertex = mul(UNITY_MATRIX_P, v.vertex);
